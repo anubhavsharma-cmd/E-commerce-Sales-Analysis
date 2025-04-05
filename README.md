@@ -5,15 +5,15 @@ This project analyzes eCommerce consumer behavior using Excel for data preparati
 
 ---
 
-## 📁 Data Preparation in Excel
+##  Data Preparation in Excel
 
-### 🎯 Objectives
+###  Objectives
 - Import and explore raw eCommerce data
 - Clean and format fields (dates, prices, booleans)
 - Handle missing values and duplicates
 - Export the cleaned dataset for SQL analysis
 
-### 🧠 Methodology
+###  Methodology
 - **File Used:** `Ecommerce_Consumer_Behavior_Analysis_Data.csv`
 - **Tools:** Microsoft Excel and Power Query
 - **Steps Taken:**
@@ -25,25 +25,25 @@ This project analyzes eCommerce consumer behavior using Excel for data preparati
   - Standardized column names
   - Exported clean data to `ecommerce_cleaned.xlsx`
 
-### ✅ Results
+###  Results
 - Dataset cleaned with consistent formatting
 - Ready for SQL analysis and Tableau visualization
 
 ---
 
-## 📊 SQL Analysis
+##  SQL Analysis
 
-### 🎯 Objective
+###  Objective
 To uncover key business insights regarding product profitability, discount impact, customer behavior, and marketing effectiveness.
 
-### 🧠 Methodology
+###  Methodology
 - Imported Excel file into PostgreSQL
 - Used SQL queries for analysis, joining and grouping data where necessary
 - Output visualized in Tableau dashboards
 
 ---
 
-### 🔍 SQL Analysis Insights
+###  SQL Analysis Insights
 
 #### 1. **Most Profitable Product Category**
 **Result:**
@@ -78,7 +78,7 @@ To uncover key business insights regarding product profitability, discount impac
 
 ---
 
-## 📈 Conclusion
+##  Conclusion
 This analysis reveals that:
 - **Electronics** are the most profitable product category
 - **Discounts** drive higher sales volumes but not necessarily more profit
@@ -86,20 +86,13 @@ This analysis reveals that:
 - **Social media and ad engagement** significantly boost spending
 - **Shipping preferences** affect customer decision times
 
-### 📌 Business Takeaways:
+###  Business Takeaways:
 - Prioritize marketing on high-margin categories
 - Target high-income and socially engaged customers
 - Promote express shipping for faster conversions
 
 ---
 
-## 📁 Files & Artifacts
-- `ecommerce_cleaned.xlsx` – Cleaned Excel dataset
-- `ecommerce_analysis.sql` – SQL scripts used for Tableau
-- `Ecommerce_Dashboard.twbx` – Tableau dashboard (optional)
 
-Let me know if you'd like:
-- 📊 Visuals or charts included
-- 📄 Export to PDF/DOCX
-- ✏️ Edits or additions
+
 

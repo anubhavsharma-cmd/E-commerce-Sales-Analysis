@@ -17,34 +17,63 @@ Tools Used:
 
 Dataset Used:
 •	Dataset Name: ecommerce_consumer
+
 •	Columns: 
+
 o	Customer_ID
+
 o	Age
+
 o	Gender
+
 o	Income_Level
+
 o	Marital_Status
+
 o	Education_Level
+
 o	Occupation
+
 o	Location
+
 o	Purchase_Category
+
 o	Purchase_Amount
+
 o	Discount_Used (Boolean: TRUE/FALSE)
+
 o	Frequency_of_Purchase
+
 o	Purchase_Channel
+
 o	Brand_Loyalty
+
 o	Product_Rating
+
 o	Time_Spent_on_Product_Research(hours)
+
 o	Social_Media_Influence
+
 o	Discount_Sensitivity
+
 o	Return_Rate
+
 o	Customer_Satisfaction
+
 o	Engagement_with_Ads
+
 o	Device_Used_for_Shopping
+
 o	Payment_Method
+
 o	Date
+
 o	Customer_Loyalty_Program_Member
+
 o	Purchase_Intent
+
 o	Shipping_Preference
+
 o	Time_to_Decision
 
 

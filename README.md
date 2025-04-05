@@ -105,17 +105,25 @@ Data Visualization (Tableau):
 6.	Social Media and Ad Influence: Scatter plot showing correlation between engagement and spending.
 
 Key Insights & Conclusion:
+
 •	Most profitable product category: Electronics was identified as the most profitable category, generating the highest total revenue and net profit.
+
 •	Impact of discounts: While discounts increased the number of transactions, they reduced overall profit margins. Customers tend to buy more frequently when discounts are applied, but average purchase amounts are lower.
+
 •	Customer behavior trends: High-income customers tend to spend more per purchase, whereas middle-income customers make more frequent purchases, especially when discounts are available.
+
 •	Effect of social media and ads: Customers influenced by social media and ads have a higher engagement rate, leading to increased spending.
+
 •	Shipping preferences and decision time: Customers who prefer faster shipping tend to make quicker purchase decisions, whereas those choosing economy shipping take more time to finalize purchases.
 
 Next Steps:
 
 •	Recommendation: Optimize discount strategies by targeting specific high-value categories rather than applying blanket discounts.
+
 •	Future Work: Advanced machine learning models for predicting high-value customers.
+
 •	Optimize marketing strategies: Focus on social media and ad campaigns that lead to higher spending.
+
 •	Improve logistics strategy: Prioritize shipping options that reduce purchase decision time and increase customer satisfaction.
 
 Project Summary:

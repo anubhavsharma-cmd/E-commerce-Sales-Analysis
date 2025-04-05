@@ -1,1 +1,71 @@
+CREATE TABLE Ecommerce_Consumer_Behavior (
 
+Customer_ID VARCHAR(20),
+
+Age INT,
+
+Gender VARCHAR(10),
+
+Income_Level VARCHAR(20),
+
+Marital_Status VARCHAR(20),
+
+Education_Level VARCHAR(50),
+
+Occupation VARCHAR(50),
+
+Location VARCHAR(100),
+
+Purchase_Category VARCHAR(100),
+
+Purchase_Amount VARCHAR(20),
+
+Frequency_of_Purchase INT,
+
+Purchase_Channel VARCHAR(50),
+
+Brand_Loyalty INT,
+
+Product_Rating INT,
+
+Time_Spent_on_Product_Research_hours FLOAT,
+
+Social_Media_Influence VARCHAR(50),
+
+Discount_Sensitivity VARCHAR(50),
+
+Return_Rate INT,
+
+Customer_Satisfaction INT,
+
+Engagement_with_Ads VARCHAR(50),
+
+Device_Used_for_Shopping VARCHAR(50),
+
+Payment_Method VARCHAR(50),
+
+Time_of_Purchase VARCHAR(50),
+
+Discount_Used BOOLEAN,
+
+Customer_Loyalty_Program_Member BOOLEAN,
+
+Purchase_Intent VARCHAR(50),
+
+Shipping_Preference VARCHAR(50),
+
+Time_to_Decision INT
+
+);
+
+LOAD DATA INFILE '/full/path/to/Ecommerce_Consumer_Behavior_Analysis_Data.csv'
+
+INTO TABLE Ecommerce_Consumer_Behavior
+
+FIELDS TERMINATED BY ','
+
+ENCLOSED BY '"'
+
+LINES TERMINATED BY '\n'
+
+IGNORE 1 ROWS;

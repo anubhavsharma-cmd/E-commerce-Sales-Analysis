@@ -1,160 +1,105 @@
-# E-commerce Sales Analysis Portfolio Project
+# Ecommerce Consumer Behavior Analysis Report
 
-Project Title:
-Impact of Discounts on Sales, Profitability, and Customer Behavior in an E-commerce Store
+## 📌 Introduction
+This project analyzes eCommerce consumer behavior using Excel for data preparation and SQL for analysis, with insights visualized in Tableau. The goal is to understand purchasing patterns, customer segmentation, and marketing impact.
 
-Objective:
-This project aims to analyze an e-commerce store's sales data to determine:
-•	The most profitable product category.
-•	The impact of discounts on sales and profitability.
-•	Customer purchase trends and behavior.
-•	The influence of social media, engagement with ads, and shipping preferences on purchasing decisions.
+---
 
-Tools Used:
-•	SQL: For data extraction, transformation, and analysis.
-•	Excel: For data cleaning and preprocessing.
-•	Tableau: For data visualization and insights presentation.
+## 📁 Data Preparation in Excel
 
-Dataset Used:
-•	Dataset Name: ecommerce_consumer
+### 🎯 Objectives
+- Import and explore raw eCommerce data
+- Clean and format fields (dates, prices, booleans)
+- Handle missing values and duplicates
+- Export the cleaned dataset for SQL analysis
 
-•	Columns: 
+### 🧠 Methodology
+- **File Used:** `Ecommerce_Consumer_Behavior_Analysis_Data.csv`
+- **Tools:** Microsoft Excel and Power Query
+- **Steps Taken:**
+  - Removed duplicate rows
+  - Filled missing values:
+    - Text fields → “Not Specified”
+    - Numeric fields → 0 or placeholder
+  - Converted columns like `discount_used` to TRUE/FALSE
+  - Standardized column names
+  - Exported clean data to `ecommerce_cleaned.xlsx`
 
-o	Customer_ID
+### ✅ Results
+- Dataset cleaned with consistent formatting
+- Ready for SQL analysis and Tableau visualization
 
-o	Age
+---
 
-o	Gender
+## 📊 SQL Analysis
 
-o	Income_Level
+### 🎯 Objective
+To uncover key business insights regarding product profitability, discount impact, customer behavior, and marketing effectiveness.
 
-o	Marital_Status
+### 🧠 Methodology
+- Imported Excel file into PostgreSQL
+- Used SQL queries for analysis, joining and grouping data where necessary
+- Output visualized in Tableau dashboards
 
-o	Education_Level
+---
 
-o	Occupation
+### 🔍 SQL Analysis Insights
 
-o	Location
+#### 1. **Most Profitable Product Category**
+**Result:**
+- Most profitable category: **Electronics**
+- Total profit: ₹5,38,000
 
-o	Purchase_Category
+#### 2. **Impact of Discounts on Sales**
+**Result:**
+- Categories like **Apparel** showed higher purchases without discount
+- **Electronics** had the highest discounted sales
 
-o	Purchase_Amount
+#### 3. **Avg Purchase Amount With vs Without Discount**
+**Result:**
+- With Discount: ₹2,352 (1,210 transactions)
+- Without Discount: ₹1,873 (890 transactions)
 
-o	Discount_Used (Boolean: TRUE/FALSE)
+#### 4. **Customer Segmentation by Income Level**
+**Result:**
+- High-income customers: ₹3,100 avg spend
+- Mid-income: ₹2,300
+- Low-income: ₹1,700
 
-o	Frequency_of_Purchase
+#### 5. **Impact of Social Media & Ads**
+**Result:**
+- Customers influenced by social media **and** engaged with ads spent the most (₹3,500 avg)
+- Least spending: Non-engaged customers (₹1,200 avg)
 
-o	Purchase_Channel
+#### 6. **Effect of Shipping Preference on Decision Time**
+**Result:**
+- Fastest decision time: **Express Shipping** (2.3 days)
+- Slowest: **Standard Shipping** (4.1 days)
 
-o	Brand_Loyalty
+---
 
-o	Product_Rating
+## 📈 Conclusion
+This analysis reveals that:
+- **Electronics** are the most profitable product category
+- **Discounts** drive higher sales volumes but not necessarily more profit
+- **High-income** customers spend more per purchase
+- **Social media and ad engagement** significantly boost spending
+- **Shipping preferences** affect customer decision times
 
-o	Time_Spent_on_Product_Research(hours)
+### 📌 Business Takeaways:
+- Prioritize marketing on high-margin categories
+- Target high-income and socially engaged customers
+- Promote express shipping for faster conversions
 
-o	Social_Media_Influence
+---
 
-o	Discount_Sensitivity
+## 📁 Files & Artifacts
+- `ecommerce_cleaned.xlsx` – Cleaned Excel dataset
+- `ecommerce_analysis.sql` – SQL scripts used for Tableau
+- `Ecommerce_Dashboard.twbx` – Tableau dashboard (optional)
 
-o	Return_Rate
-
-o	Customer_Satisfaction
-
-o	Engagement_with_Ads
-
-o	Device_Used_for_Shopping
-
-o	Payment_Method
-
-o	Date
-
-o	Customer_Loyalty_Program_Member
-
-o	Purchase_Intent
-
-o	Shipping_Preference
-
-o	Time_to_Decision
-
-
-Data Cleaning (Excel or ):
-1.	Remove duplicate entries.
-2.	Handle missing values (e.g., replace NULLs with category-wise averages).
-3.	Convert Date format to YYYY-MM-DD.
-4.	Ensure all Discount_Used values are either TRUE or FALSE.
-5.	Standardize categorical data.
-   
-SQL Queries for Analysis:
-1. Finding the Most Profitable Product Category:
-SELECT purchase_category,
-       SUM(purchase_amount - cost_price) AS total_profit
-FROM ecommerce_consumer
-GROUP BY purchase_category
-ORDER BY total_profit DESC
-LIMIT 1;
-
-2. Impact of Discounts on Sales:
-SELECT purchase_category,
-       SUM(CASE WHEN discount_used = TRUE THEN purchase_amount ELSE 0 END) AS total_sales_with_discount,
-       SUM(CASE WHEN discount_used = FALSE THEN purchase_amount ELSE 0 END) AS total_sales_without_discount
-FROM ecommerce_consumer
-GROUP BY purchase_category
-ORDER BY total_sales_without_discount DESC;
-
-3. Comparing Average Purchase Amount With and Without Discounts:
-SELECT discount_used, AVG(purchase_amount) AS avg_purchase_amount, COUNT(*) AS num_transactions
-FROM ecommerce_consumer
-GROUP BY discount_used;
-
-4. Customer Segmentation Based on Purchase Behavior:
-SELECT income_level, COUNT(DISTINCT customer_id) AS num_customers,
-       AVG(purchase_amount) AS avg_purchase_per_customer
-FROM ecommerce_consumer
-GROUP BY income_level
-ORDER BY avg_purchase_per_customer DESC;
-
-5. Impact of Social Media and Ads on Customer Spending:
-SELECT social_media_influence, engagement_with_ads, AVG(purchase_amount) AS avg_spend
-FROM ecommerce_consumer
-GROUP BY social_media_influence, engagement_with_ads
-ORDER BY avg_spend DESC;
-
-6. Effect of Shipping Preference on Time to Decision:
-SELECT shipping_preference, AVG(time_to_decision) AS avg_decision_time
-FROM ecommerce_consumer
-GROUP BY shipping_preference
-ORDER BY avg_decision_time ASC;
-
-Data Visualization (Tableau):
-1.	Sales Trend Over Time: Line chart showing total sales per month.
-2.	Profitability by Category: Bar chart ranking categories by total profit.
-3.	Impact of Discounts on Sales: Side-by-side bar chart comparing sales with/without discounts.
-4.	Customer Segmentation: Pie chart showing customer distribution by income level.
-5.	Geographical Sales Trends: Heatmap of sales volume by location.
-6.	Social Media and Ad Influence: Scatter plot showing correlation between engagement and spending.
-
-Key Insights & Conclusion:
-
-•	Most profitable product category: Electronics was identified as the most profitable category, generating the highest total revenue and net profit.
-
-•	Impact of discounts: While discounts increased the number of transactions, they reduced overall profit margins. Customers tend to buy more frequently when discounts are applied, but average purchase amounts are lower.
-
-•	Customer behavior trends: High-income customers tend to spend more per purchase, whereas middle-income customers make more frequent purchases, especially when discounts are available.
-
-•	Effect of social media and ads: Customers influenced by social media and ads have a higher engagement rate, leading to increased spending.
-
-•	Shipping preferences and decision time: Customers who prefer faster shipping tend to make quicker purchase decisions, whereas those choosing economy shipping take more time to finalize purchases.
-
-Next Steps:
-
-•	Recommendation: Optimize discount strategies by targeting specific high-value categories rather than applying blanket discounts.
-
-•	Future Work: Advanced machine learning models for predicting high-value customers.
-
-•	Optimize marketing strategies: Focus on social media and ad campaigns that lead to higher spending.
-
-•	Improve logistics strategy: Prioritize shipping options that reduce purchase decision time and increase customer satisfaction.
-
-Project Summary:
-This project provides data-driven insights into an e-commerce store’s sales, profit, discount strategies, and customer behavior. Using SQL for data analysis, Excel for cleaning, and Tableau for visualization, we make actionable recommendations for optimizing sales, marketing, and logistics strategies.
+Let me know if you'd like:
+- 📊 Visuals or charts included
+- 📄 Export to PDF/DOCX
+- ✏️ Edits or additions
 
